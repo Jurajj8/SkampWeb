@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ContactSection from "@/components/ContactSection.astro";
+---
+
+<Layout>
+  <HeroSection
+    title="Kontaktujte nás"
+    subtitle="Máte otázky alebo sa chcete objednať? Neváhajte nás kontaktovať!"
+    buttonText="Napísať správu"
+    buttonLink="#contact"
+  />
+  <ContactSection />
+</Layout>

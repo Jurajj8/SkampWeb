@@ -1,0 +1,26 @@
+---
+let { title, subtitle, buttonText, buttonLink } = Astro.props;
+---
+
+<section class="relative h-screen flex items-center justify-center text-center bg-black overflow-hidden">
+  <!-- Pozadie ako IMG -->
+  <div class="absolute inset-0">
+    <img src="/barber-bg.jpg" alt="Barber Shop" class="w-full h-full object-cover scale-110" />
+    <div class="absolute inset-0 bg-black/50 backdrop-blur"></div>
+  </div>
+
+  <!-- Obsah v popredí -->
+  <div class="relative z-10 flex flex-col items-center justify-center px-6">
+    <h2 class="text-5xl font-extrabold text-white drop-shadow-lg">
+      {title}
+    </h2>
+    <p class="text-lg text-gray-300 mt-4 max-w-2xl">
+      {subtitle}
+    </p>
+    <a href={buttonLink} class="mt-6 inline-block px-8 py-4 text-lg font-bold text-white bg-red-500 rounded-xl shadow-lg hover:bg-red-600 transition">
+      {buttonText}
+    </a>
+  </div>
+</section>
+
+  
