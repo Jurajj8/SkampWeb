@@ -1,16 +1,25 @@
 import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-import tailwind from "@astrojs/tailwind";
-import solidJs from "@astrojs/solid-js";
-import { SITE_METADATA } from "./src/consts.ts";
-import metaTags from "astro-meta-tags";
-
-import robotsTxt from "astro-robots-txt";
+import tailwindcss from 'tailwindcss';
 
 // https://astro.build/config
 export default defineConfig({
-  prefetch: true,
-  site: SITE_METADATA.siteUrl,
-  integrations: [mdx(), sitemap(), tailwind(), solidJs(), metaTags(), robotsTxt()]
+  base: '/',
+  site: 'https://Jurajj8.github.io/SkampWeb/',
+  output: 'static',
+
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: "resources/[name]-[hash][extname]", // ✅ CSS & JS do `resources/`
+          entryFileNames: "resources/[name]-[hash].js",
+        },
+      },
+    },
+  },
+
+  build: {
+    format: "directory", // ✅ Dôležité! Vynúti generovanie `index.html`
+    ssr: false, // 🔥 Zakáže generovanie SSR súborov
+  }
 });
