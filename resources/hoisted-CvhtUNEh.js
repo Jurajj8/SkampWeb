@@ -1,0 +1,1 @@
+document.getElementById("menu-toggle")?.addEventListener("click",()=>{document.getElementById("mobile-menu")?.classList.toggle("hidden")});window.addEventListener("scroll",function(){const e=document.getElementById("navbar");e&&(window.scrollY>50?e.classList.add("bg-neutral-600","shadow-lg"):e.classList.remove("bg-neutral-600","shadow-lg"))});
