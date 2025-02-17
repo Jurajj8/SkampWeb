@@ -1,15 +1,16 @@
-<header class="fixed w-full top-0 left-0 z-50 bg-white">
+<header id="navbar" class="fixed w-full top-0 left-0 z-50 transition-colors duration-300 ease-in-out">
   <div class="container mx-auto flex items-center justify-between py-4 px-6">
     <!-- Logo -->
     <a href="/" class="flex items-center space-x-3">
-      <img src="/logo.png" alt="BarberShop Logo" class="h-16 w-auto"> 
+      <img src="/logo_white.png" alt="BarberShop Logo" class="h-16 w-auto"> 
     </a>
 
     <!-- Navigačné menu -->
     <nav class="hidden md:flex space-x-8">
-      <a href="/" class="text-black hover:text-white transition">Domov</a>
-      <a href="#" class="text-black hover:text-white transition">Služby</a>
-      <a href="/contact" class="text-black hover:text-white transition">Kontakt</a>
+      <a href="/" class="text-white hover:text-gray-300 transition">Domov</a>
+      <a href="/sluzby" class="text-white hover:text-gray-300 transition">Služby</a>
+      <a href="#" class="text-white hover:text-gray-300 transition">Galéria</a>
+      <a href="/kontakt" class="text-white hover:text-gray-300 transition">Kontakt</a>
     </nav>
 
     <!-- Rezervačné tlačidlo -->
@@ -26,14 +27,29 @@
   <!-- Mobilné menu (skryté defaultne) -->
   <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-gray-900 py-4 shadow-md">
     <a href="/" class="block text-gray-300 hover:text-white text-center py-2">Domov</a>
-    <a href="#" class="block text-gray-300 hover:text-white text-center py-2">Služby</a>
-    <a href="/contact" class="block text-gray-300 hover:text-white text-center py-2">Kontakt</a>
+    <a href="/sluzby" class="block text-gray-300 hover:text-white text-center py-2">Služby</a>
+    <a href="#" class="block text-gray-300 hover:text-white text-center py-2">Galéria</a>
+    <a href="/kontakt" class="block text-gray-300 hover:text-white text-center py-2">Kontakt</a>
     <a href="https://rezervacie.danielpollak.sk" class="block text-white text-center bg-purple-600 py-3 mt-2 mx-4 rounded-xl hover:bg-red-600">Rezervovať</a>
   </nav>
 </header>
 
 <script>
+  // Mobilné menu toggle
   document.getElementById("menu-toggle")?.addEventListener("click", () => {
     document.getElementById("mobile-menu")?.classList.toggle("hidden");
+  });
+
+  // Zmena farby pozadia pri scrolle s plynulým prechodom
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+
+    if (navbar) { // ✅ Kontrola, aby sa zabránilo chybám
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-neutral-600", "shadow-lg");
+      } else {
+        navbar.classList.remove("bg-neutral-600", "shadow-lg");
+      }
+    }
   });
 </script>
