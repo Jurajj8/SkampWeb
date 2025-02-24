@@ -9,7 +9,7 @@
     <nav class="hidden md:flex space-x-8">
       <a href="/" class="text-white hover:text-gray-300 transition">Domov</a>
       <a href="/sluzby" class="text-white hover:text-gray-300 transition">Služby</a>
-      <a href="#" class="text-white hover:text-gray-300 transition">Galéria</a>
+      <a href="/galeria" class="text-white hover:text-gray-300 transition">Galéria</a>
       <a href="/kontakt" class="text-white hover:text-gray-300 transition">Kontakt</a>
     </nav>
 
@@ -19,7 +19,7 @@
     </a>
 
     <!-- Mobilné menu tlačidlo -->
-    <button id="menu-toggle" class="md:hidden text-black text-3xl focus:outline-none">
+    <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
       ☰
     </button>
   </div>
@@ -28,7 +28,7 @@
   <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-gray-900 py-4 shadow-md">
     <a href="/" class="block text-gray-300 hover:text-white text-center py-2">Domov</a>
     <a href="/sluzby" class="block text-gray-300 hover:text-white text-center py-2">Služby</a>
-    <a href="#" class="block text-gray-300 hover:text-white text-center py-2">Galéria</a>
+    <a href="/galeria" class="block text-gray-300 hover:text-white text-center py-2">Galéria</a>
     <a href="/kontakt" class="block text-gray-300 hover:text-white text-center py-2">Kontakt</a>
     <a href="https://rezervacie.danielpollak.sk" class="block text-white text-center bg-purple-600 py-3 mt-2 mx-4 rounded-xl hover:bg-red-600">Rezervovať</a>
   </nav>
@@ -46,9 +46,9 @@
 
     if (navbar) { // ✅ Kontrola, aby sa zabránilo chybám
       if (window.scrollY > 50) {
-        navbar.classList.add("bg-neutral-600", "shadow-lg");
+        navbar.classList.add("bg-gray-900", "shadow-lg");
       } else {
-        navbar.classList.remove("bg-neutral-600", "shadow-lg");
+        navbar.classList.remove("bg-gray-900", "shadow-lg");
       }
     }
   });
